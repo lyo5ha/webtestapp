@@ -1,0 +1,32 @@
+
+<h2>New Payment</h2>
+
+<%= form_for @conn, Routes.payment_path(@conn, :create), [as: :params], fn f -> %>
+
+    <div>
+        <%= label f, :payment_id %>
+        <%= text_input f, :payment_id %>
+    </div>
+
+    <div>
+        <%= label f, :ps_type %>
+        <%= text_input f, :ps_type, value: "ePayment" %>
+    </div>
+
+    <div>
+        <%= label f, :amount %>
+        <%= text_input f, :amount %>
+    </div>
+
+    <div>
+        <%= label f, :currency %>
+        <%= text_input f, :currency, value: "USD" %>
+    </div>
+
+    <div>
+        <%= label f, :status %>
+        <%= text_input f, :status, value: "new" %>
+    </div>
+
+    <%= submit "Submit" %>
+<% end %>
