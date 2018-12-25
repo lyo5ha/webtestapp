@@ -1,31 +1,46 @@
 
-<h2>New Payment</h2>
+<h2>&#8595;&#8595;&#8595;&#8595;&#8595; New Payment &#8595;&#8595;&#8595;&#8595;&#8595;</h2>
 
-<%= form_for @conn, Routes.payment_path(@conn, :create), [as: :params], fn f -> %>
+<%= form_for @conn, Routes.payment_path(@conn, :create), [as: :form_params], fn f -> %>
 
     <div>
-        <%= label f, :payment_id %>
-        <%= text_input f, :payment_id %>
+        <%= label f, :id  %>
+        <%= text_input f, :id, value: "3466368c-24b5-4e1f-af9c-d33b8711760c"%>
     </div>
 
     <div>
-        <%= label f, :ps_type %>
-        <%= text_input f, :ps_type, value: "ePayment" %>
+        <%= label f, :type %>
+        <%= text_input f, :type, value: "deposit" %>
     </div>
 
     <div>
-        <%= label f, :amount %>
-        <%= text_input f, :amount %>
+        <%= label f, :payment_system %>
+        <%= text_input f, :payment_system, value: "rbk" %>
+    </div>
+
+    <div>
+        <%= label f, :account_type %>
+        <%= text_input f, :account_type, value: "office_user" %>
+    </div>
+
+    <div>
+        <%= label f, :account_uid %>
+        <%= text_input f, :account_uid, value: "100542" %>
     </div>
 
     <div>
         <%= label f, :currency %>
-        <%= text_input f, :currency, value: "USD" %>
+        <%= text_input f, :currency, value: "RUB" %>
+    </div>
+
+    <div>
+        <%= label f, :fractional %>
+        <%= text_input f, :fractional, value: "50500" %>
     </div>
 
     <div>
         <%= label f, :status %>
-        <%= text_input f, :status, value: "new" %>
+        <%= text_input f, :status, value: "initialized" %>
     </div>
 
     <%= submit "Submit" %>
